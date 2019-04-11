@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSC1024: Web Design</title>
+</head>
+
+<body>
+    <h1>CSC1024: Website Design and Construction</h1>
+    <p>A Guide to Designing Webpages.</p>
+
+    <ul>
+        <li><a href="index-html.html">Introduction</a></li>
+        <li><a href="lecdir-html.html">Lecture Directory</a></li>
+        <li><a href="lang-html.html">Languages</a></li>
+        <li>
+            <ul>
+                <li><a href="html-html.html">HTML</a></li>
+                <li><a href="css-html.html">CSS</a></li>
+                <li><a href="javascript-html.html">JavaScript</a></li>
+            </ul>
+        </li>
+        <li><a href="resource-html.html">Resources</a></li>
+    </ul>
+
+    <hr />
+
+    <h2>Background and Landscape (week 1)</h2>
+    <h3>How the Web Works</h3>
+    <h4>The Web</h4>
+    <blockquote>
+        "The Web is an abstract (imaginary) space of information. On the Net, you find computers -- on the Web, you find
+        document, sounds,
+        videos, .... information. On the Net, the connections are cables between computers; on the Web, connections are
+        hypertext links.
+        The Web exists because of programs which communicate between computers on the Net. The Web could not be without
+        the Net. The Web
+        made the net useful because people are really interested in information (not to mention knowledge and wisdom!)
+        and don't really
+        want to have know about computers and cables." <br /> - from <a
+            href="https://www.w3.org/People/Berners-Lee/FAQ.html#InternetWeb"><i>What is the difference between the
+                Netand the Web?</i></a>
+    </blockquote>
+
+
+    <p>There are four major components of the web at present:</p>
+    <ul>
+        <li>The academic web: used by researchers and academia</li>
+        <li>The commercial web: used for business transactions (eBay and Amazon)</li>
+        <li>The social web: used for entertainment (social media)</li>
+        <li>The creative web: used for free access to data</li>
+    </ul>
+
+    <p>
+        For the future, the web aims to become more inclusive, by having a low barrier for device connection, which will
+        however make infrastructure change
+        more difficult than at present. The lines between Browser and OS will blur more, as the two become more
+        entangled (see Safari on the MacOS and personal
+        companions accessing applications). This will all lead to the web becoming more of a service, through the
+        concept of <i>Cloud Computing</i>.
+    </p>
+
+    <p>
+        To understand how the Web works, we must also understand the Internet itself. The Internet is, essentially, a
+        global-scale network, allowing for sharing of
+        resources with every device on the planet capable of connecting to the Internet. In order for this communication
+        to take place, the Internet uses protocols.
+        Protocols act as rules, defining how every piece of communication will take place, such as the type and size of
+        any data sent between two devices. Users access
+        the internet through servers and clients, which can host connection for many users simultaneously.
+    </p>
+
+    <h4>Connection Types</h4>
+
+    <p>
+        There are two main ways to establish connection via the Internet.
+    </p>
+
+    <ul>
+        <li>
+            <p>Client/Server</p>
+            <p>
+                <i>Client/Server</i> connection is typically two devices working in tandem, where one is the 'server',
+                which hosts information, and the other is the 'client', which requests information.
+                The client will initiate connection to the server, while the server will await any requests from
+                clients, as each server will typically have multiple clients.
+            </p>
+        </li>
+        <li>
+            <p>Peer-to-peer</p>
+            <p>
+                <i>P2P</i> technology is a direct connection from one device to another, with each device acting as both
+                a client and a server. This can be much faster than downloading
+                data from a server, however it opens both devices to major security risks.
+            </p>
+        </li>
+    </ul>
+
+    <p>
+        In a Client/Server network, all workstations will connect to the unifying force of the server, which will then
+        deal with any data requests itself. This can be slower than direct
+        connection if the server is under strain, but allows for much more security for the network as a whole. P2P
+        however, would be a ring of devices connected to one another directly.
+        In some cases, the server and the client are the same device. This is a <i>single seat setup</i>.
+    </p>
+
+    <h4>Internet Protocols</h4>
+
+    <p>
+        In order for the Internet to offer the range of services that it does, it makes use of vast combinations of
+        protocols in order to provide very specific services. These services are
+        often taken for granted in the modern age - without protocols, we couldn't even send and receive email. A list
+        of important protocols to know can be found <a href="https://www.concise-courses.com/11-protocols/">here</a>.
+    </p>
+
+    <p>
+        The most popular of these protocols is <i>TCP/IP</i>, which stands for <i>Transmission Control Protocol /
+            Internet Protocol</i>. TCP/IP is not so much one singular protocol
+        alone, but a collection of the most important ones which allow devices to connect to the Internet. You can read
+        more on TCP/IP protocols <a
+            href="https://www.lifewire.com/transmission-control-protocol-and-internet-protocol-816255">here</a>.
+    </p>
+
+    <p>
+        TCP/IP is actually two protocols that work in tandem to provide connection between devices.
+    </p>
+
+    <p>
+        The first, the TCP part, is the <i>Transmission Control Protocol</i>. This handles the direct connection between
+        the client and the server. In order to send data from one workstation to another, the
+        data is broken down into individual <i>packets</i> of data. These packets are then split up, and send one-by-one
+        down the line from one device to another. The TCP breaks the data down into packets,
+        and also pieces the packets back together into data for the application.
+    </p>
+
+    <p>
+        The second part is the IP part, which stands for <i>Internet Protocol</i>. An IP address is a unique identifier
+        for any device on the Internet: every device has its own special IP. The IP address tells the
+        server where the packets are coming from or going to, just like a regular address in the mailing system. The IP
+        protocol uses this information to send the packets to their correct destination. It does this
+        without even requiring a direct connection, as it can use other devices as go-betweens. However, the IP protocol
+        has its own weaknesses, and packets can easily be delivered out of sequence, or become corrupted
+        along the way.
+    </p>
+
+    <p>
+        The IP protocol works on <i>best effort delivery</i>. This is the idea that the protocol will do its best to
+        ensure the packets arrive as intended, but there is no guarantee, and a high chance something will go wrong.
+        Common errors include packets arriving late, in incorrect order, corrupted, or getting lost on their route and
+        requiring a resend. This makes the time taken to send data longer than it should, or even a connection drop
+        if the packets are late enough.
+    </p>
+
+    <p>
+        A packet is actually made up similarly to a HTML document: there is a head, and a body. The head contains all of
+        the metadata and sequencing, just like in a HTML document, and the body is the actual data
+        that is being sent. Without the body, the head has no purpose, and without the head, the body has no destination
+        or information to help piece it all back together.
+    </p>
+
+    <p>
+        As IP addresses are long, unique strings of numbers, it can be hard to remember a set IP. To counter this,
+        <i>domain names</i> exist. A domain name makes it easier to navigate the Internet by allowing the IP address to
+        be
+        replaced by a text-based name. For example, the page <a href="https://www.bbc.co.uk/">www.bbc.co.uk</a> will
+        have a unique IP, but this is hard to remember. It is much easier to remember the simple terms used in the
+        domain name.
+        All domain names are stored in a global DNS system, which translates the domain name to the IP address, to make
+        them interchangeable.
+    </p>
+
+    <h4>Web Architecture: HTTP</h4>
+
+    <p>
+        <i>HTTP</i> (HyperText Transfer Protocol) is the set of protocols in charge of file transfers. These files can
+        be anything - text, images, sound, etc. Any webpage accessed using the Internet makes use of HTTP. HTTP runs
+        alongside
+        TCP/IP to function. When clients and servers interact (sending request messages and receiving response packets),
+        they do so through HTTP messages, which travel as TCP/IP packets. HTTP messages are <i>stateless</i>, which
+        means
+        each exchange is completely independent: a request/response pair is one pair, and any other information will be
+        sent as a different exchange.
+    </p>
+
+    <p>
+        When sending and receiving request/response pairs, the server must tell the client how their request is doing.
+        It does this by selecting one of the 41 response codes available, and sending that to the client. These codes
+        inform the
+        client of anything, from successs, redirection, and different kinds of errors. Some, you may even know yourself:
+        404 Not Found is one such Client-side error response code.
+    </p>
+
+    <h4>Anatomy of a URL</h4>
+
+    <p>
+        A website's <i>URL</i> (Uniform Resource Locator) is a specific location on the site, that is broken down into a
+        collection of parts. These are detailed below:
+    </p>
+
+    <table>
+        <tr>
+            <th>Scheme</th>
+            <th>Authority</th>
+            <th>Path</th>
+            <th>Query</th>
+            <th>Fragment</th>
+        </tr>
+        <tr>
+            <td>http:</td>
+            <td>//csvm3000.ncl.ac.uk</td>
+            <td>/urls/index.php</td>
+            <td>?msg=hello</td>
+            <td>#demo</td>
+        </tr>
+    </table>
+
+    <p>
+        As you can see, the 'scheme' is the protocol HTTP, and the 'authority' is the site's domain name. The 'path'
+        directs to a specific page other than the homepage on the website (in this case, the index). The query provides
+        information
+        on what may have been inputted to the site to achieve the page that will load. The fragment details a set part
+        of the webpage, for example, how low down the scroll bar will be on loading the page.
+    </p>
+
+    <hr />
+
+    <p>
+        Website by Summer Anderson-Cheung // Student 180363450 at <a href="https://www.ncl.ac.uk/computing/">Newcastle
+            University School of Computing</a>.
+    </p>
+
+</body>
+
+</html>

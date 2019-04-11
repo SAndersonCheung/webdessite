@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSC1024: Web Design</title>
+</head>
+
+<body>
+    <h1>CSC1024: Website Design and Construction</h1>
+    <p>A Guide to Designing Webpages.</p>
+
+    <ul>
+        <li><a href="index-html.html">Introduction</a></li>
+        <li><a href="lecdir-html.html">Lecture Directory</a></li>
+        <li><a href="lang-html.html">Languages</a></li>
+        <li>
+            <ul>
+                <li><a href="html-html.html">HTML</a></li>
+                <li><a href="css-html.html">CSS</a></li>
+                <li><a href="javascript-html.html">JavaScript</a></li>
+            </ul>
+        </li>
+        <li><a href="resource-html.html">Resources</a></li>
+    </ul>
+
+    <hr />
+
+    <h2>Web Content: Structure (week 3)</h2>
+    <p>As this entry is longer than others, click below to skip to a specific section: </p>
+    <ul>
+        <li><a href="#3partone">HTML & XHTML</a></li>
+        <li><a href="#3parttwo">Tags & Attributes</a></li>
+        <li><a href="#3partthree">Standards & Validation</a></li>
+    </ul>
+
+    <h3 id="3partone">HTML & XHTML</h3>
+
+    <h4>The History of HTML</h4>
+
+    <p>
+        When HTML was first created, the intention was to handle and share simple, text-based document. As the Internet
+        becamse more popular and widespread, new versions were created with new features, eventually creating the HTML
+        used today. Many versions of HTML have existed throughout the years. <br />
+        <i>HTML 2.0</i> was released in November of 1995, and helped outline a set of standards for exactly what HTML
+        could do. By standardising the language, the Internet could advance, as everyone was on the same page on how to
+        develop content for the Internet. <br />
+        <i>HTML 3.2</i> was released in January of 1997, and is the direct continuation to HTML 2.0, as HTML 3.0 was
+        proposed, but declared too difficult to employ, and eventually the proposal draft expired. HTMLL 3.2 allowed for
+        a range of new features, including the ability to have tables on a web page, and allowing text to flow around
+        other objects. <br />
+        <i>HTML 4.0</i> was released in April 1998, and made HTML the language it is today. It included the support for
+        CSS and JavaScript, alongside a whole host of accessibility features.<br />
+        <i>HTML 4.01</i> was released in December 1999, and was titled such as it was largely an update to HTML 4.0 than
+        its own iteration.
+    </p>
+
+    <p>
+        HTML has its issues, however. It was created just for web browsers on PCs and workstations, which ended up
+        making it very forgiving to syntax errors and variations of its markup. For example, elements could be missing
+        end tags, and tag names could be uppercase or lowercase. This caused problems with standardising the Internet as
+        a whole, and requires a lot more processing when the packets reach the client than if syntax was stricter. In an
+        effort to decrease the processing power needed, <i>XHTML</i> was created.
+    </p>
+
+    <h4>XHTML</h4>
+
+    <p>
+        To understand XHTML, we must first talk about <i>XML</i>. XML (Extensible Markup Language) is a flexible, yet
+        standardised specification for markup languages. By following XML's strict, yet simple to understand rules for
+        the structure of documents, the Web became more consistent. A document that follows XML's rules can be ready by
+        any XML parser. Due to this, it was decided to adjust HTML to abide XML's rules.
+    </p>
+
+    <p>
+        XHTML (named as a combination of HTML and XML) uses the same tags and attributes as HTML 4.01, but produces
+        documents that are much more structured and consistent. Some rules that XHTML follows are:
+    </p>
+
+    <ul>
+        <li>Tags must be in lowercase.</li>
+        <li>Attributes must be in name/value pairs.</li>
+        <li>Tags must be opened and closed.</li>
+        <li>Self-contained tags must be closed.</li>
+        <li>Special characters must use correct entity values.</li>
+    </ul>
+
+    <h4>HTML5</h4>
+
+    <p>
+        <i>HTML5</i> is the most recent major release of HTML, and includes XHTML. Created with the intention to reduce
+        the need for browser plugins, and allow for more device independence, HTML5 replaces scripting with markup
+        wherever possible. Browser plugins, like Flash, were required on many webpages to utilise media that was
+        otherwise inaccessible. With the release of HTML5, however, the need for Flash plugins has been released by
+        simple media tags. All major browsers support HTML5 now, allowing for this media to be accessible on devices
+        other than PCs, such as mobile phones. This has allowed for a more consistent Internet, capable of being used
+        the same way across a host of platforms. While particular features may vary (CSS still appears slightly
+        different in multiple Internet browsers), it is now much easier to allow for cross-platform compatibility.
+    </p>
+
+    <p>
+        With three types of HTML to choose from, it can be difficult to know which one you're developing for. This
+        decision isn't actually that important, as long as your code is consistent, and meets the requirements of the
+        language you choose. You can check online if a page meets these requirements <a
+            href="http://validator.w3.org/">here</a>.
+    </p>
+
+    <h4>Structure of a Web Page</h4>
+
+    <p>
+        Web pages are only processed by the computer when they are in use. This means that overall, developers have less
+        control over the final product, as it is assembled whenever it is accessed. By structuring HTML code correctly,
+        it will render more consistently in browsers, and is much easier to maintain and edit, as well as easier to read
+        for the user.
+    </p>
+
+    <p id="dtdexplanation">
+        The <i>W3C</i> (World Wide Web Consortium) are an international group focused entirely on developing Web
+        standards. Whenever a new version of HTML is released, the W3C will publish their <i>DTD</i> (Document Type
+        Definitions) which detail the rules for that version of the language. This document features where tags can be
+        used, where they can appear, and what attributes they can hold. You can learn more about the W3C <a
+            href="https://www.w3.org/Consortium/">here</a>.
+    </p>
+
+    <blockquote>
+        An HTML 4 document is composed of three parts:<br />
+        a line containing HTML version information,<br />
+        a declarative header section (delimited by the HEAD element),<br />
+        a body, which contains the document's actual content. The body may be implemented by the BODY element or the
+        FRAMESET element. <br />
+        - from <a href="https://www.w3.org/TR/html401/struct/global.html"><i>Introduction to the structure of an HTML
+                document</i></a>
+    </blockquote>
+
+    <p>
+        Let's start with "<i>a line containing HTML version information</i>" for our analysis of this standard. This
+        starting line is a tag that encapsulates the entire document, marking it as a HTML document, and it opens by
+        telling the client that is processing it exactly what kind of HTML document it is. Let's go over this line for
+        HTML 4.01, XHTML, and HTML5.
+    </p>
+
+    <div class="codebit">
+        <code>
+            &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;<br />
+            &lt;html&gt;<br />
+            &lt;head&gt;<br />
+            &lt;title&gt;This is a title!&lt;/title&gt;<br />
+            &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;<br />
+            &lt;/head&gt;<br />
+            &lt;body&gt;<br />
+            &lt;p&gt;This is a web page!&lt;/p&gt;<br />
+            &lt;/body&gt;<br />
+            &lt;/html&gt;
+        </code>
+    </div>
+
+    <p>
+        The long '!DOCTYPE' line is the HTML version defining line, and this line in particular defines the page as a
+        web page running on HTML 4.01. The 'meta' tag in the head section of the document is equally important, as it
+        defines the content on the page.
+    </p>
+
+    <div class="codebit">
+        <code>
+            &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;<br />
+            &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;<br />
+            &lt;head&gt;<br />
+            &lt;title&gt;This is a title!&lt;/title&gt;<br />
+            &lt;meta http-equiv="content-type" content="text/html;charset=utf-8" /&gt;<br />
+            &lt;/head&gt;<br />
+            &lt;body&gt;<br />
+            &lt;p&gt;This is a web page!&lt;/p&gt;<br />
+            &lt;/body&gt;<br />
+            &lt;/html&gt;
+        </code>
+    </div>
+
+    <p>
+        As you can imagine, this codebit tells the processor that the page is running on XHTML. This requires some
+        additional content than the HTML 4.01 definition, as you also need to include the 'xmlns' line in the actual
+        HTML tag. Additionally important: in XHTML, single tags (such as &lt;br&gt; for line breaks) must be self
+        closing. This means that instead of &lt;br&gt;, they must be &lt;br /&gt;. You can see this in the 'meta' tag
+        line.
+    </p>
+
+    <div class="codebit">
+        <code>
+            &lt;!DOCTYPE html&gt;<br />
+            &lt;html&gt;<br />
+            &lt;head&gt;<br />
+            &lt;title&gt;This is a title!&lt;/title&gt;<br />
+            &lt;meta charset=utf-8"&gt;<br />
+            &lt;/head&gt;<br />
+            &lt;body&gt;<br />
+            &lt;p&gt;This is a web page!&lt;/p&gt;<br />
+            &lt;/body&gt;<br />
+            &lt;/html&gt;
+        </code>
+    </div>
+
+    <p>
+        This codebit is a lot simpler than the HTML 4.01 and the XHTML. This is how to define a HTML5 web page. As
+        HTML5 is the standard of the Internet currently, not much definition is required, as processors will presume you
+        are running HTML5 as default. Also note the simplicity of the 'meta' tag in this version as well.
+    </p>
+
+    <p>
+        After you've defined the language your web page is in, you're ready to make the page itself! Let's talk about
+        &lt;head&gt;! The 'head' tag encapsulates everything on the web page that the browser and processor
+        loading the page need to know. This means the title that appears in the tab at the top, the language the page is
+        in, and any additional information, such as a favicon. The information in the 'head' is not actually on the page
+        itself.
+    </p>
+
+    <p>
+        The &lt;body&gt; tag is everything that is on the web page. Titles, copy, images, tables, videos, links, if it's
+        visible on the web page, it's written in the body of the HTML document. As such, this is primarily where
+        developers write their code.
+    </p>
+
+    <h3 id="3parttwo">Tags & Attributes</h3>
+
+    <p>
+        A tag is how you define something on the web page. Let's imagine we're writing code for the &lt;body&gt; of a
+        web page. Anything on the page will use a tag to define it. For example, if you would like the page to begin
+        with a header, we begin with a &lt;h1&gt; tag. With tags that feature text, like 'h1' and 'p', you must remember
+        that they work in pairs; you must close the tags that you open. Otherwise, the processor doesn't know when your
+        header ends and your copy begins. Some tags however, are not paired, and are fine on their own, such as 'img'
+        and 'hr'. Depending on what type on HTML your web page works on, you may have to make the tag self-closing, as
+        previously mentioned. Tags can contain other tags within themselves, called nesting, allowing for thing such as
+        italicised text and hyperlinks. When tags are nested, it's good practise to ensure they are indented, to make
+        the code overall easier to read.
+    </p>
+
+    <p>
+        While a tag defines something, an attribute is like an adjective. The attribute provides additional information
+        about the tag, and can alter its behaviour. They appear as so:
+    </p>
+
+    <div class="codebit">
+        <code>
+            &lt;tag attribute="value"&gt;content&lt;/tag&gt;
+        </code>
+    </div>
+
+    <p>
+        Attributes are declared only in the opening tag, and exist in self-closing tags as well. Attributes are used,
+        for example, when defining an image. An attribute would be 'src', and the value would be the source of the image
+        the developer wishes to be on the page, whether this is a hyperlink, or a location within a file structure to
+        retrieve the image. All attributes must have a value to work.
+    </p>
+
+    <p>
+        Due to the vast number of tags supported by the most recent HTML versions, tags are categorised so they can be
+        understood easier. The first, most basic form of tag is a <strong>block-level tag</strong>. These tags provide
+        basic structure
+        for a web page, including headers, paragraphs, lists, and tables.
+    </p>
+
+    <h4>Tag List</h4>
+
+    <p>
+        <i>Headers</i> are defined by a &lt;h1&gt; tag. The number can be replaced by any number 1 to 6, each number
+        representing a slightly smaller heading. This allows for exponentially decreasing in size font for the headers.
+        It is important when using headers not to skip over a number for a smaller font size, as this is considered bad
+        practise. Instead, they should always start at one (with one &lt;h1&gt; tag per page), and go down a size for a
+        subheading or section.
+    </p>
+
+    <p>
+        Paragraphs make up the main body of the web page, as they are where the page's primary content will be located.
+        Just like using a word document, there is a specific difference between a sentence starting on a new line, and
+        being its own seperate paragraph. If it's the latter, simple make a new &lt;p&gt; tag and type your next
+        paragraph. The former, meanwhile, is called a <i>line break</i>, and is characterised by the tag &lt;br&gt;.
+        This tag is self contained, meaning it doesn't need a closing tag, and is typically located in the middle of a
+        paragraph. Similar to this is a horizontal rule, which is a line that goes across the page to seperate two
+        sections of the page. There's one on this page before the footer! This is a &lt;hr&gt; self-contained tag.
+    </p>
+
+    <p>
+        In HTML, there are three types of list. <br />
+        <i>Ordered lists</i> are lists where every value on the list begins with a number that is counting up. This is
+        typically used for a set of instructions, dictating the order to follow the instructions. Attribute use allows
+        developers to change the starting number of the list, or how the list counts up (to Roman numerals, etc).<br />
+        <i>Unordered lists</i> use bullet points instead of numbers, and are typically used to list a number of points,
+        or for structure. <br />
+        <i>Definition lists</i> are lists that read like entries in a dictionary with terms and term definitions. Terms
+        are bolded, whilst definitions are text that follow a term. <br />
+        For ordered and unordered lists, their tags are &lt;ol&gt; and &lt;ul&gt; accordingly, with every entry on a
+        list being surrounded by a &lt;li&gt; tag, for 'list item'. Definition lists are individual in this aspect, as
+        they are defined by &lt;dl&gt;, but terms are defined by &lt;dt&gt;, and definitions &lt;dd&gt;.
+    </p>
+
+    <p>
+        In HTML5, there are <strong>flow elements</strong>. These are tags introduced to represent more modern documents
+        on the web, and
+        replacing the need for extra common 'id' and 'class' attributes by making their own tags. These are typically
+        tags such as &lt;article&gt;, &lt;header&gt; and &lt;footer&gt;, and &lt;menu&gt;.
+    </p>
+
+    <p>
+        The next type of tag is an <strong>inline tag</strong>. These are tags that a nexted within block-level tags,
+        such as within a paragraph. They include tags such as &lt;i&gt;, for italicised text, and &lt;strong&gt;, for
+        bolded text. They typically apply more meaning and emphasis on the text, however, different browsers may render
+        them slightly differently. <br />
+        <i>Logical inline tags</i> are tags which provide semantic meaning to the content they encapsulate, such as
+        &lt;code&gt;, for code fragments, and &lt;cite&gt;, for citations. Italicisation and bolding come under logical
+        inline tags.<br />
+        <i>Physical inline tags</i> are tags used for visual feedback. Italicisation and bolding text also comes under
+        this category, but so does &lt;s&gt;, for strikethrough text, and &lt;sub&gt; and &lt;sup&gt; for making
+        <sub>subscript</sub> and <sup>superscript</sup> accordingly.
+    </p>
+
+    <p>
+        Once again exclusive to HTML5, <strong>phrasing elements</strong> were created for the same reasons as flow
+        elements, yet cover a different area of additions, worthy of their own section. This includes often lesser-used
+        features, such as &lt;progress&gt; and &lt;time&gt;, and more common features, like &lt;canvas&gt;.
+    </p>
+
+    <div class="codebit">
+        <code>&lt;a href="link" title="tooltip"&gt;This text would be the link!&lt;/a&gt;</code>
+    </div>
+
+    <p>
+        The codebit above is the general HTML anatomy of a hyperlink. Hyperlinks can be text or images, and can link to
+        anything accessible on the Internet, or other pages within the file structure of the web page. THe 'href'
+        location in quotes is the destination of the link, and the 'title' tooltip is the text that appears when the
+        user hovers their mouse over the link, providing more information on the link's destination. <br />
+        Not only can links go to other pages, but also to specific sections of the page the user is currently on.
+        Instead of the word link, replace the code with '#section'. Then, apply an id attribute called 'section' to a
+        part of your page. Clinking the link should now automatically scroll the page down to that part of the web page.
+    </p>
+
+    <p>
+        Tables are used to showcase data in an easy-to-read, easy-to-understand format. To write a table in HTML, you
+        read left-to-right, and then go down to the leftmost cell of the next row and repeat. Headers in tables use
+        &lt;th&gt;, and entries use &lt;td&gt;, but each row of the table must be within a &lt;tr&gt; tag, and all rows
+        of the table must be within a &lt;table&gt; tag. <br />
+        Tables also have table-specific attributes, such as 'border' and 'width'. Every individual cell of the table can
+        have its own attributes too, such as 'colspan' and 'rowspan', which allows for the usage of merged cells.<br />
+        Tables can also be captioned, which allows for a title to be put on the caption. This is typically done
+        immediately after the opening &lt;table&gt; tag.
+    </p>
+
+    <p>
+        Imagine you want to structure your document into sections, without using a line break or a horizontal rule. How
+        would you do so? The &lt;div&gt; and &lt;span&gt; tags allow you to segmentise specific parts of your web page.
+        'div' is used to as a block-level tag, containing images and whole paragraphs, while span is an inline tag,
+        covering small portions of text within a paragraph. Combining these tags with the 'id' and 'class' attributes
+        allows developers a wide range of customisation and classification on their web page, and to impact these
+        classes through CSS.
+    </p>
+
+    <p>
+        XHTML requires all characters that aren't letters or numbers to be specified exactly. This can be with simple
+        character entity names - &copy; can be specified as &.copy; without a full stop - or with numeric references.
+        Numeric references are used for less common references, such as specially accented vowels used in foreign
+        languages, or even the Greek alphabet (&#8721; is &.#8721; without a full stop). A full list of these entities
+        can be found <a href="http://htmlhelp.com/reference/html40/entities/">here</a>.
+    </p>
+
+    <h3 id="3partthree">Standards & Validation</h3>
+
+    <h4>Standards</h4>
+
+    <p>Standards are a set of rules used to ensure that web content can be viable in the long-term. Essentially, by
+        adhering to the standardised rules the W3C can ensure that HTML can support your web page for as long as
+        possible, meaning that less updates are required overall. More information on W3C's standards can be found <a
+            href="http://www.webstandards.org/about/mission/">here</a>. Standards were created with the help of most
+        major software and hardware manufacturers, and are not, despite common belief, the sole responsibility of the
+        W3C.
+    </p>
+
+    <p>
+        When web technology became more mainstream, the expansion of technology and advancement often left users using
+        'wrong' browsers excluded, as certain pages would load and function incorrectly. This meant users typically
+        required several versions of Internet browsers to access the entirety of the Internet. By ensuring that web
+        developers today maintain standards, browser developers have a much easier time of ensuring compatibility.
+    </p>
+
+    <p>
+        As previously mentioned above (<a href="#dtdexplanation">here</a>), the W3C released a DTD (Document Type
+        Definition) for every update to HTML, alongside recommendations of how browsers should interpret the content.
+        <br />
+        Every version of HTML or XHTML has at least two DTDs, which are the two main types. <i>Strict</i> DTD's contain
+        only the current, valid tags and attributes, while <i>Transitional</i> also holds deprecated definitions,
+        allowing for backwards compatibility. On this course, it is important to ensure you are abiding the Strict DTD,
+        so your code compiles correctly. A DTD declatation is the previously explained link in the first line of HTML,
+        the '!DOCTYPE' tag. This tag links the page to the DTD it is abiding, which is actually a text-file, read by the
+        machine.
+    </p>
+
+    <p>
+        <i>Deprecated</i> tags and attributes are tags and attributes that are out of date, and no longer supported by
+        the most modern form of HTML. This occured with the introduction of HTML 4.01, which encouraged developers to
+        remove the deprecated tags from their code. These tags are solidly invalid for strict HTML 4.01 and strict
+        XHTML, and will form errors. THe most common deprecations are style and layout focused; for example, the
+        &lt;font&gt; inline tags, and the 'align' attributes. The appearance and design achieved with these deprecated
+        tags and attributes can now be achieved through CSS.
+    </p>
+
+    <h4>Validation</h4>
+
+    <p>
+        Validation is when a reader detects which DTD the code is abiding, and runs it against the DTD. While there are
+        many tools online, the W3C has their own specific validator (<a href="http://validator.w3.org/">here</a>).
+        Validators are necessary because you cannot tell through running the code alone if the code is valid; browsers
+        do not validate markup.
+    </p>
+
+    <hr />
+
+    <p>
+        Website by Summer Anderson-Cheung // Student 180363450 at <a href="https://www.ncl.ac.uk/computing/">Newcastle
+            University School of Computing</a>.
+    </p>
+
+</body>
+
+</html>

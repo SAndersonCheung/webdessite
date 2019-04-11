@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSC1024: Web Design</title>
+</head>
+
+<body>
+    <h1>CSC1024: Website Design and Construction</h1>
+    <p>A Guide to Designing Webpages.</p>
+
+    <ul>
+        <li><a href="index-html.html">Introduction</a></li>
+        <li><a href="lecdir-html.html">Lecture Directory</a></li>
+        <li><a href="lang-html.html">Languages</a></li>
+        <li>
+            <ul>
+                <li><a href="html-html.html">HTML</a></li>
+                <li><a href="css-html.html">CSS</a></li>
+                <li><a href="javascript-html.html">JavaScript</a></li>
+            </ul>
+        </li>
+        <li><a href="resource-html.html">Resources</a></li>
+    </ul>
+
+    <hr />
+
+    <h2>Web Content Creation (week 2)</h2>
+    <h3>Key Principles: Structure, Presentation & Behaviour</h3>
+
+    <h4>The Basics of Web Content: Recap</h4>
+
+    <p>A web page loads via these simple steps: </p>
+
+    <ol>
+        <li>The client sends a packet request to the server.</li>
+        <li>The server server responds by sending response packets via HTTP.</li>
+        <li>The packets are assembled in order to produce the flat file source code.</li>
+        <li>The HTML source code is rendered by the browser to show a web page on the client.</li>
+    </ol>
+
+    <h4>Seperation of Concerns</h4>
+
+    <p>The three languages that make up a web page each control a major aspect of the web page. The HTML controls the
+        content - it's all about structure and subject matter. CSS, meanwhile, controls the presentation and appearance
+        of the page. JavaScript adds anything extra, controlling the behaviour of the page, and making the site more
+        interactive. Look under the 'Languages' tab to find more information on each of these languages.
+    </p>
+
+    <div class="note">
+        <p>
+            <strong>Note:</strong> JavaScript controls the interactivity of a site on the client-side; server-side uses
+            other languages, like PHP or Ruby!
+        </p>
+    </div>
+
+    <p>
+        By seperating out the page's anatomy like this, it is much easier to maintain and make adjustments. If a
+        developer wanted to change the appearance but not the content of the site, they could adjust the CSS without
+        having to worry about any content being affected.
+    </p>
+
+    <h4>Client-Side Scripting and Server-Side Scripting</h4>
+
+    <p>
+        When a website attempts to do anything, it must use a script. The script is a set of instructions for either the
+        web browser, or the server. Instructions for the web browser are known as client side scripting, whereas
+        instructions for the server are known as server-side scripting.
+    </p>
+    <p>
+        Scripting is the way that websites remember their visitors, and their histories. When a search engine remembers
+        what you last searched for, and recommends results to you, that is an example of scripting usage.
+    </p>
+    <p>
+        Client side scripts are very dependent on the browser that the user is using to access the webpage, and on the
+        user’s computer. Compatibility issues can arise with the browser, and the computer’s CPU and bandwidth
+        (connection strength) correlates to how fast a webpage will load. A slow computer means that the webpage will
+        load slower, and an incompatible browser means the webpage might not load at all.
+    </p>
+    <p>
+        Server side scripts help individualise how two users will experience the webpage. The two users may have very
+        different experiences, and this is because of server side scripting. When the request is sent to the server that
+        the webpage is needed, server side scripting decides how to interpret and adapt the page to suit the user. This
+        is typically used for websites that have accounts tied to them, as it allows for a level of personalisation, and
+        privacy. Account-based websites (such as MMORPG’s, and social networking websites) heavily rely on server-side
+        scripting in order to function.
+    </p>
+
+    <hr />
+
+    <p>
+        Website by Summer Anderson-Cheung // Student 180363450 at <a href="https://www.ncl.ac.uk/computing/">Newcastle
+            University School of Computing</a>.
+    </p>
+
+</body>
+
+</html>
