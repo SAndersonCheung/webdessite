@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This document uses XHTML 1.0 Strict -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSC1024: Web Design</title>
+    <link rel="stylesheet" href="style.css" type="text/css" /> <!-- Links the style css stylesheet -->
+    <script src="validateNum.js" type="text/javascript"></script> <!-- Links to script file validateNum.js -->
+</head>
+
+<body>
+
+    <div class="header">
+        <!-- Sections off the header of each page -->
+
+        <h1>CSC1024: Website Design and Construction</h1>
+        <p>A Guide to Designing Webpages.</p>
+
+        <div class="navbar">
+            <!-- Allows for adjustments with the nav bar -->
+            <a href="index-html.html">Introduction</a>
+            <!-- Lines 20 to 36 are links which craft the file structure of the website and allow for navigation -->
+            <a href="lecdir-html.html">Lecture Directory</a>
+            <div id="dropdown">
+                <!-- Allows for a drop down nav bar -->
+                <button onclick="window.location.href='lang-html.html'" id="drop">Languages</button>
+                <!-- Makes the button still clickable while also showing the nav bar on hover -->
+                <div id="dropcontent">
+                    <a href="html-html.html">HTML</a>
+                    <a href="css-html.html">CSS</a>
+                    <a href="javascript-html.html">JavaScript</a>
+                </div>
+            </div>
+            <a href="resource-html.html">Resources</a>
+        </div>
+
+    </div>
+
+    <hr />
+
+    <div class="pagecontent">
+        <!-- Sections off the page content of each page -->
+
+        <h2>Web Content: Behaviour (weeks 7-11)</h2>
+        <h3>HTML Forms</h3>
+
+        <p>
+            A <i>web form</i> is used to allow for user interaction, and collecting user input. Typically, this will
+            consist
+            of some form of user input data, and a submission button, which sends the input to a specified location.
+            Forms
+            are much easier than you'd expect, and very useful!
+        </p>
+
+        <div class="codebit">
+            <code>
+        &lt;body&gt; <br />
+            &lt;form method="get" action="http://destinationserver.com/"&gt; <br />
+            &lt;p&gt; <br />
+                Enter your name: &lt;input type="text" name="username" /&gt; <br />
+            &lt;/p&gt; <br />
+            &lt;/form&gt; <br />
+        &lt;/body&gt;
+        </code>
+        </div>
+
+        <p>
+            As you can see from the codebit, the structure of the form is fairly simple. The entirety of the form is
+            surrounded by &lt;form&gt;, which specifies the purpose of the form, and the destination of the results of
+            the
+            form. Then, within the form tags, an input tag will be used, stating its method of collecting data, as well
+            as a
+            'name' identifier. This is for how the data is sent to the destination, and simply tells the reader of the
+            data
+            what the data is telling them. For example, if the entered name was 'Joe', the sent data would read
+            'username=Joe'. <br />
+            Below is an example of what the above code will compile into:
+        </p>
+
+        <form method="get" action="http://destinationserver.com/">
+            <!-- Just an example input box: no submit button so a functioning destination server isn't necessary -->
+            <p>
+                Enter your name: <input type="text" name="username" />
+            </p>
+        </form>
+
+
+        <p>
+            The tag '<code>&lt;input type="text" name="username" /&gt;</code>' is referred to as a <i>form control</i>.
+            They
+            hold values (explicit, like a typed-in username, or implied, like a selection from a drop down list) which
+            are
+            specified by their name attribute. Common form controls include text input, radio buttons (a set of buttons
+            where only one can be selected), checkboxes (a set of buttons where multiple can be selected), drop-down
+            menus,
+            and password fields. The form will end with a submission and reset button, which send the data, or clear all
+            of
+            the fields accordingly. If one form control is left empty, it will simply be skipped over in the sent data.
+            Explanations of how to do each of these can be found <a
+                href="https://www.w3schools.com/html/html_forms.asp">here</a>.
+        </p>
+
+        <p>
+            Due to the nature of forms, they must be organised. As such, there are many form-exclusive tags and
+            attributes,
+            which offer independent block-level structure, meaning typical tags such as &lt;p&gt; and &lt;div&gt; become
+            redundant. For example, &lt;fieldset&gt; works like a &lt;div&gt;, isolating a section of the form, but
+            surrounds the section in a visible box. The &lt;legend&gt; tag works in tandem, labelling the isolated
+            section.
+        </p>
+
+        <p>
+            The most important part of the form is the submit button, which sends the data to the destination. Submit
+            buttons can be custom images, or browser-drawn regular buttons. Most websites use the latter, as buttons can
+            now
+            be customised in CSS, and can fit the theme much better, and be interactable. The below code snipped would
+            create one such browser button.
+        </p>
+
+        <div class="codebit">
+            <code>
+        &lt;input type="submit" value="Submit this info" /&gt;
+        </code>
+        </div>
+
+        <img src="images/getvpost.PNG" alt="A table stating the pros and cons of GET in comparison to POST."
+            class="center" />
+        <!-- Image using class center (center an image using margin-left/margin-right: auto;) -->
+
+        <p>
+            Now, let's talk about <i>GET</i> vs <i>POST</i>. You may have noticed in the starting tag for the form, the
+            method is specified to 'get'. When the user submits a form with a method set to 'get', the browser makes a
+            HTTP
+            GET request. If successful, the form data will be appended to the URL as a <i>querystring</i>, which is
+            everything after a '?' in the URL. The script that processes this will look at the querystrint ot extract
+            and
+            use the data. All web requests default to 'get' including typed in addresses in browsers links clicked in
+            pages
+            and many similar requests.
+        </p>
+
+        <p>
+            Alternatively, the post method makes a HTML POST request, which is a specific method used for carrying data
+            to
+            the server in the request's body. This means there is no queryscript attached to any URL. As GET is the
+            default
+            if a developer wished to use POST they'd have to clearly specify their preference.
+        </p>
+
+        <p>
+            HTML5 differs here, as its form controls have some features not available in XHTML or HTML4. Essentially,
+            there
+            are more input types availabe to developers, including sliders, and date-selectors, which allows for much
+            better
+            data collection on the whole.
+        </p>
+
+        <h3>JavaScript &amp; the HTML DOM</h3>
+
+        <p>
+            JavaScript is an aptly named scripting language that is embedded into the XHTML of a web page. Using a
+            syntax
+            similar to that of programming language C's, the language is executed in the client's browser, and does not
+            hold
+            any relation to the programming language Java. A full timeline of the history of JavaScript can be found <a
+                href="timeline-html.html">here</a>.
+        </p>
+
+        <p>
+            JavaScript is an inline addition to any web page, adding a large catalogue of features and interactions
+            otherwise unobtainable, or very difficult to obtain. JavaScript can be used for interaction with mouse
+            movement,
+            browser-type based behaviours, or validation to forms (which will be investigated in depth below). The tag
+            used
+            to indicate a piece of JavaScript code is &lt;script&gt;, but must contain an attribute specifying it's type
+            as
+            interpreter/engine.
+        </p>
+
+        <div class="codebit">
+            <code>
+            &lt;script type="text/javascript"&gt; <br />
+            &lt;input type="submit" value="Submit this info" /&gt; <br />
+            &lt;/script&gt;
+        </code>
+        </div>
+
+        <p>
+            An additional attribute for 'src' may also be used in the initialising script tag if the script is external
+            in
+            nature, and the 'src' will link to the external JavaScript file. When this occurs any code between the two
+            scrip
+            tags will be ignored, but the script tag can never be self-closing/self-contained. External JavaScript can
+            be
+            more helpful depending on what the JavaScript's purpose is, as externally stored allows common functions to
+            be
+            shared, and the code to be reused across multiple pages with little duplication.
+        </p>
+
+        <img src="images/javascriptposition.png"
+            alt="An image showing how JavaScript should be structured around the head and body: a function exists in the head and is called from the body."
+            class="center" />
+        <!-- Image using class center (center an image using margin-left/margin-right: auto;) -->
+
+        <p>
+            A difficult question when using JavaScript is where in the page to use it. A good rule to follow is to put
+            as
+            much code as you possible can in the &lt;head&gt; section, so the web page itself is not cluttered. This
+            would
+            be things like functions and definitions, whereas the actual body of the JavaScript would be where on the
+            web
+            page the JavaScript is meant to be implemented.
+        </p>
+
+        <p>
+            JavaScript follows the steps of a standard programming language, with strings numbers and booleans as
+            standard
+            data types. These can be loosely typed
+            (<code>variableOne = 26; variableTwo = true; variableThree = "Hello!";</code>) but it is better practise to
+            initialise with the key term <i>var</i> before the name of the variable, and then apply value to the
+            variable on
+            a different line.
+        </p>
+
+        <p>
+            Arrays exist in JavaScript with the standard zero-based index (Arrays start at 0). They can be created and
+            populated on the same line, or each entry populated independently of creation and can easily be manipulated
+            and
+            accessed. They are pretty much exactly how they function within Java. <br />
+            Loops are also the same to how they function in Java with for loops, if loops, while loops, and do while
+            loops
+            all being supported.
+        </p>
+
+        <p>
+            You may have noticed the title for this section, '<i>JavaScript &amp; HTML DOM</i>', and it's time to detail
+            what
+            HTML DOM is. DOM stands for <i>Document Object Model</i> and is a language/platform neutral interface to a
+            document. It defines a document's objects, relationships between the objects, along with their methods and
+            proporties. This means it describes HTML documents, the browser window, and allows access to any part of a
+            document.
+        </p>
+
+        <img src="images/xhtmldom.PNG"
+            alt="An image showing how elements are tiered, and how the browser window provides global context for other objects."
+            class="right" />
+        <!-- Image using class right (float right) -->
+
+        <p>
+            The browser window/frame is the 'window' object, from with all objects are decended from in the hierarcy. In
+            the
+            image shown, you can see a direct descendent is the 'document' object. This object is the current web page
+            and
+            all HTML elements are components of this.
+        </p>
+
+        <p>
+            DOM nodes are accessed in a range of methods, which are typically standardised as <i>W3C DOM 1.0</i> but
+            browsers generally develop different DOM's, most notable Internet Explorer.<br />
+        </p>
+        <ul>
+            <li>Access <i>by name</i> is when the objects are referred to by name, in hierarchy order. This has many
+                problems, the biggest being that it isnt applicable to all elements of a page, making it an
+                inconsistent
+                access method. </li>
+            <li>Access <i>by built-in object collections</i> is reliant on the browser. The browser will build some
+                pre-defined collections for certain DOM objects which can allow for access, removing the need for
+                name..
+            </li>
+            <li><i>Direct</i> access is the usage of a universal address syntax and document methods to access any
+                object located in the document via its position, or by type/ID. It does so using a collection called
+                'all' to tager the ID of an object. </li>
+            <li><i>W3C DOM</i> access is the web standard approach, based on DOM 1.0. Using a range of methods to
+                access
+                document objects, this access method is supported by all modern browsers. A key perk of this access
+                type
+                is feature detection, which detects if a feature is supported by the client's browser, and adjusts
+                accordingly. This is <i>not</i> a form of reliable browser detection, and should not be used as
+                such.
+            </li>
+            <li><i>Script</i> access is when JavaScript is used to acces the page objects. The components inside the
+                document object will all have a type and properties, and potentially, collections and methods. This
+                acces method utilises a dot operator ( '.' ) to access objects. </li>
+        </ul>
+
+        <h3>Form Validation</h3>
+
+        <p>
+            Form validation is a good example of how JavaScript can enhance a website. Previously, there may have been
+            no
+            way to restrict data entered into input other than a restricted data type, but using JavaScript, you can do
+            so!
+            Take the example below:
+        </p>
+
+        <p>Please input a number between 1 and 5:</p>
+        <input id="num" />
+        <button type="button" onclick="validateNum()">Submit</button>
+        <p id="fve"></p>
+
+        <p>
+            That takes 16 lines of code, and can be quite useful when the information in the form is vital to not be
+            wrong.
+            Browsers also have granted an easy way of client-side validating form content, with the 'required' keyword.
+            Typing 'required' at the end of the input tag means that the form cannot be submitted with that specific
+            input
+            box empty. This is commonly used when signing up for things online, and forgetting to enter details such as
+            an
+            email address.
+        </p>
+
+        <div class="codebit">
+            <code>
+    &lt;form action="/action_page.php" method="post"&gt; <br />
+        &lt;input type="text" name="fname" <i>required</i>&gt; <br />
+        &lt;input type="submit" value="Submit"&gt; <br />
+    &lt;/form&gt; 
+    </code>
+        </div>
+
+        <p>
+            You can find out how to validate numbers like this <a
+                href="https://www.w3schools.com/js/js_validation.asp">here</a>!
+        </p>
+
+    </div>
+
+    <hr />
+
+    <div class="footer">
+
+        <p>
+            Website by Summer Anderson-Cheung // Student 180363450 at <a
+                href="https://www.ncl.ac.uk/computing/">Newcastle
+                University School of Computing</a>.
+        </p>
+
+    </div>
+
+</body>
+
+</html>

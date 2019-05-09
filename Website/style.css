@@ -1,0 +1,152 @@
+* {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    font-family: Verdana, Calibri, sans-serif;
+    background-color: #72777A;
+    min-width: 500px;
+    max-width: 1000px;
+}
+
+code {
+    font-family: Courier New, monospace;
+}
+
+.pagecontent, .header, .footer{
+    background-color: #E8F3FA;
+    padding: 20px;
+}
+
+.pagecontent h2, .pagecontent h3, .pagecontent h4, .quote, .header p, h1 {
+    text-align: center;
+}
+
+.codebit {
+    background-color: #B4BDC2;
+    border-left-style: solid;
+    border-width: 3px;
+    border-color: #256185;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.note {
+    min-width: 200px;
+    max-width: 300px;
+    padding: 5px;
+    border: 1px solid #256185;
+    text-align: center;
+    background-color: white;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #256185;
+    background-color: #256185;
+    height: 9px;
+    width: 100%;
+    border: 0px solid;
+}
+
+a {
+    color: #256185;
+}
+
+table, table tr, table td {
+    border: 1px solid #72777A;
+}
+
+.navbar {
+    overflow: hidden;
+    height: 45px;
+    text-align: center;
+    background-color: #256185;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 8px 12px 20px;
+    text-decoration: none;
+}
+
+#dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+#dropdown #drop {
+    border: none;
+    outline: none;
+    font: inherit;
+    font-size: 16px;
+    color: white;
+    background-color: #256185;
+    padding: 8px 12px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover, #dropdown:hover #drop {
+    background-color: #9ED7FB;
+}
+
+#dropcontent {
+    display: none;
+    position: absolute;
+    font: inherit;
+    font-size: 16px;
+    color: white;
+    background-color: #256185;
+    padding: 8px 12px 20px;
+    text-decoration: none;
+}
+
+#dropcontent a {
+    float: none;
+    font-size: 16px;
+    color: white;
+    padding: 8px 12px 20px;
+    text-decoration: none;
+}
+
+#dropcontent a:hover {
+    background-color: #9ED7FB;
+}
+
+#dropdown:hover #dropcontent {
+    display: block;
+}
+
+.shrink {
+    width: 80%;
+    height: auto;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.left {
+    float: left;
+    margin: 10px;
+}
+
+.right, .note {
+    float: right;
+    margin: 10px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

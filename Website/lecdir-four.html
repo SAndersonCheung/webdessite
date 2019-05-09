@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <!-- This document uses XHTML 1.0 Strict -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSC1024: Web Design</title>
+    <link rel="stylesheet" href="style.css" type="text/css" /> <!-- Links the style css stylesheet -->
+</head>
+
+<body>
+
+    <div class="header"> <!-- Sections off the header of each page -->
+
+        <h1>CSC1024: Website Design and Construction</h1>
+        <p>A Guide to Designing Webpages.</p>
+
+        <div class="navbar"> <!-- Allows for adjustments with the nav bar -->
+            <a href="index-html.html">Introduction</a>
+            <a href="lecdir-html.html">Lecture Directory</a>
+            <div id="dropdown">
+                <!-- Allows for a drop down nav bar -->
+                <button onclick="window.location.href='lang-html.html'" id="drop">Languages</button>
+                <!-- Makes the button still clickable while also showing the nav bar on hover -->
+                <div id="dropcontent">
+                    <a href="html-html.html">HTML</a>
+                    <a href="css-html.html">CSS</a>
+                    <a href="javascript-html.html">JavaScript</a>
+                </div>
+            </div>
+            <a href="resource-html.html">Resources</a>
+        </div>
+
+    </div>
+
+    <hr />
+
+    <div class="pagecontent"> <!-- Sections off the page content of each page -->
+
+        <h2>Web Content: Presentation (weeks 4-5)</h2>
+        <h3>CSS Essentials</h3>
+
+        <p>
+            CSS stands for <i>Cascading Style Sheets</i>. Please read the base information on CSS available under the
+            CSS
+            tag, or click <a href="css-html.html">here</a>.
+        </p>
+
+        <p>
+            To truly understand the extent at which CSS can change a web page, visit <a
+                href="http://www.mezzoblue.com/zengarden/alldesigns/">Zen Garden</a>. It's a website that shows you the
+            same
+            page, and allows you to adjust the CSS of the web page to see how it can completely change the mood, tone,
+            and
+            style of a web page without any edits to the content itself.
+        </p>
+
+        <p>
+            The breakdown of a CSS <i>formatting rule</i> (one unit of declaration) is into two parts: selectors, which
+            decide which piece of HTML is affected, and declarations, which decide how that HTML will be altered.
+            Multiple
+            declarations can be made under one selector.
+        </p>
+
+        <div class="codebit">
+            <code>
+            #one { <br />
+            color:grey; <br />
+            background-color:blue; <br />
+            }
+        </code>
+        </div>
+
+        <p>
+            In the above code, anything marked with the ID 'one' will have a blue background, and white text. We know it
+            has
+            to be the ID over the 'class' due to the use of '#'. If 'one' was a class instead, it would be preceeded by
+            a
+            '.' instead of a '#'.
+        </p>
+
+        <p>
+            <i>Selectors</i> can cover tag, classes, or ID's. One formatting rule can have multiple selectors, to be
+            more
+            efficient with space and avoid repetitive code. This also allows developers to combine the three for
+            specific
+            matches, and combine with &lt;div&gt; and &lt;span&gt; to give more precise control.
+        </p>
+
+        <p>
+            <i>Declarations</i> follow a clear-cut structure. First, they state what they are adjusting (ie: color,
+            margin,
+            border), and then a colon. Then, how they are adjusting it (ie: red, 15px, solid). As multiple delcarations
+            can
+            exist in the same formatting rule, they must be seperated with a semi-colon.
+        </p>
+
+        <table>
+            <tr>
+                <th>Selector</th>
+                <th>Pattern</th>
+            </tr>
+            <tr>
+                <td>p</td>
+                <td>All &lt;p&gt;</td>
+            </tr>
+            <tr>
+                <td>.special</td>
+                <td>&lt;tag class="special"&gt;</td>
+            </tr>
+            <tr>
+                <td>p.special</td>
+                <td>All &lt;p class="special"&gt;</td>
+            </tr>
+            <tr>
+                <td>#box</td>
+                <td>The only &lt;tag id="box"&gt;</td>
+            </tr>
+            <tr>
+                <td>#box p</td>
+                <td>All &lt;p&gt; nested inside the only &lt;tag id="box"&gt;</td>
+            </tr>
+            <tr>
+                <td>#box > p</td>
+                <td>All &lt;p&gt; that are direct children of &lt;tag id="box"&gt;</td>
+            </tr>
+            <tr>
+                <td>#box p.special</td>
+                <td>All &lt;p class="special"&gt; nested inside the only &lt;tag id="box"&gt;</td>
+            </tr>
+            <tr>
+                <td>div#box p</td>
+                <td>All &lt;p&gt; nested inside the only &lt;div id="box"&gt;</td>
+            </tr>
+        </table>
+
+        <p>
+            More selector syntax can be found <a href="https://www.w3.org/TR/CSS2/selector.html">here</a>.
+        </p>
+
+        <p>
+            The <i>units</i> CSS supports are varied. <i>Absolute</i> units are calculated independently of the rest of
+            the
+            page, and set at their specific state. They include pixels (px), points (pt), and millimetres (mm).
+            <i>Relative</i> units are calculated against either the browser, or other content on the page. They include
+            percentages (%), ems (em), and exes (ex). Special relative text units are available (small, large, x-large).
+            Combining both can make a design much better.
+        </p>
+
+        <p>
+            You may have noticed all the colours used in prior examples have been stated by names. This may lead to the
+            incorrect impression the CSS has limitations on colour. CSS actually supports three different ways to define
+            which colour the developer would like an asset to be. They can state one of the 17 supported colour names,
+            they
+            can define an RGB code with rgb(0,32,234);, or they can state a hex code with #0000ff;. All of these would
+            show
+            the colour stated on the web page.
+        </p>
+
+        <p>
+            <i>Pseudo</i> classes and elements also exist: selectors for special parts or statuses of specific elements.
+            Examples include a p:first-letter selector, allowing alteration to the first letter of a paragraph, or the
+            a:hover selector, allowing alteration to links whenever they are hovered over.
+        </p>
+
+        <h3>CSS Box Model &amp; Positioning</h3>
+
+        <h4>The Box Model</h4>
+
+        <p>
+            The box model is a theoretical theory used in HTML and CSS. The idea is that every piece of content on a
+            webpage
+            is surrounded by a box. There are four key boxes; the content, the padding, the border, and the margin.
+        </p>
+
+        <img src="images/boxmodelone.png" alt="Image showing how the box model works: many boxes surrounding an object."
+            class="right" />
+            <!-- Image using class right (float right) -->
+
+        <p>
+            The box model allows the programmer to specify borders and spacing around elements on a web page. The
+            content is
+            text or an image, and the padding is the invisible space between the content and the border. Similarly, the
+            border is a solid line (or dashed, etc.) which surrounds the content, and the margin is the space between
+            the
+            border, and adjacent elements. When the size of an element is defined in the CSS of a page, it is the
+            content
+            that is defined. The padding, border, and margin can all be added on to the defined size of the content, in
+            order to separate the content from other elements on the page, or in order to define a border.
+        </p>
+
+        <p>
+            The <i>padding</i> is the space between the outside edge of the content, and the inside edge of its box;
+            essentially, the space between the text and the inside of the border.
+        </p>
+
+        <p>
+            The <i>border</i> is the outline of a box, and has three sub-properties: width, style, and colour. These are
+            specified by border-width, border-style, and border-color accordingly. However, you can adjust all of these
+            in
+            just one declaration:
+        </p>
+
+        <div class="codebit">
+            <code>
+            #one { <br />
+            border: 20px solid red <br />
+            }
+        </code>
+        </div>
+
+        <p>
+            The <i>margin</i> is the space around the outside edge of the box, including the border. This allows you to
+            make
+            space between the boxes, and space out your content evenly.
+        </p>
+
+        <p>
+            The browser will defaultly use the max width available for a box, but this can be adjusted in CSS to ensure
+            that
+            a box maintains a correct size. To make this more compatible for different sized monitors, modern browsers
+            also
+            allow for min-width and max-width to be assigned, and decided upon based on the page. The same works for
+            height.
+        </p>
+
+        <p>
+            The <i>background</i> of an asset is the visible space inside any borders, covering the content and padding.
+            It
+            can be a colour, or an image ( <code> background-image: url(filelocation); </code> ). When an image is used,
+            developers can also select the position of the initial image and whether the background repeats, and if so,
+            in
+            what direction.
+        </p>
+
+        <p>
+            If the content of a box is greater than the box's absolute set size, <i>overflow</i> is created. There are
+            three ways to deal with this: <br />
+            <code>overflow:visible;</code> causes the text to flow out of the box, maintaining the same horizontal width
+            and extending down lengthwise out of the box. <br />
+            <code>overflow:hidden;</code> hides the text that flows out of the box, making the text inside the box
+            appear to just end, being cut off but maintaining the overall structure of the webpage. <br />
+            <code>overflow:scroll; / overflow:auto;</code> will add a scroll bar with length proportional to the amount
+            of text that cannot fit into the box. <br />
+        </p>
+
+        <p>
+            When utilising text, CSS has two main methods: <i>display</i> and <i>visibility</i>. <br />
+            Display alters how the selected text is portrayed. The states <code>block; inline; none;</code> alter how
+            the selected text works in regards to surrounding text. For example, 'none' makes it so the selected text is
+            invisible, and the space it occupied is filled by whatever follows the selected text, effectively making it
+            so the selected text does not exist on the page. The other two mentioned states, 'block' and 'inline' do
+            with CSS what is usually done through HTML: change the spacings and flow of a paragraph by utilising a new
+            line. 'block' starts the new text on a new line, whereas 'inline' makes the text, well, inline. <br />
+            Visibility is, essentially, show/hide. The primary two states are <code>hidden; visible;</code>, which do
+            exactly what they say. However, it should be noted that if text is hidden with visibility, the space it
+            occupied will not be automatically filled with whatever follows it, as it would if display was set to none.
+        </p>
+
+        <h4>CSS Positioning</h4>
+
+        <p>
+            The most important thing to do when starting to work on CSS positioning is to ensure that the affected HTML
+            is well-structured ordered, and effectively utilises ID's and classes, to allow for the CSS to be equally
+            well structured. It is also important to ensure the HTML is consistent, and is using the 'strict' version of
+            the selected HTML type.
+        </p>
+
+        <p>
+            The next step is to ensure you understand how <a href="https://www.w3schools.com/css/css_boxmodel.asp">the
+                box model</a> works. Once you envision every component of the website as a box, positioning is simply a
+            matter of moving them around.
+        </p>
+
+        <p>
+            The CSS building blocks to design the structure of a web page are <i>floats</i>, <i>columns</i>, and
+            <i>position</i>. Let's go through them one by one.
+        </p>
+
+        <img src="images/positioning.png" alt="Example of how an web page's boxes are structured in HTML and then CSS."
+            class="center shrink" />
+            <!-- Image using classes center (center an image using margin-left/margin-right: auto;) & shrink (shrink the image to 80% size) -->
+
+        <p>
+            A <i>float</i> is a property that sends the selected object to the specified direction. These are typically
+            'right' and 'left'. Coupled with the 'width' statement, these can be effectively utilised to have two or
+            more sections of the web page side-by-side. The selected object is sent as far as possible in the specified
+            direction. <br />
+            Let's imagine a scenario where a designer floats an image to the left, and there are two different text
+            paragraphs positioned after the image in the HTML. Contrary to popular belief, the boxes for the text
+            paragraphs won't change size width-wise to appease the image taking up room, but will stretch length-wise to
+            wrap their text around the float. <br />
+            Accompanying the float statement, is the clear statement, which can be finished with
+            <code>right; left; both;</code> to determine which side of the box is cleared of any floated elements, which
+            is a term for stopping the float covering content.
+        </p>
+
+        <img src="images/columns.png"
+            alt="Image showing how utilising padding and margin changes to create columns affects the boxes."
+            class="center shrink" />
+            <!-- Image using classes center (center an image using margin-left/margin-right: auto;) & shrink (shrink the image to 80% size) -->
+
+        <p>
+            When creating two side-by-side columns, typically only one object needs to be floated in a direction.
+            Instead of floating one object left, and the other right, you can simply float one left, and adjust padding
+            or margin to be the size of the first object. The way this affects to boxes is shown visually in the image
+            above.
+        </p>
+
+        <p>
+            The <i>position</i> propery has four specific values to reposition boxes. They each dictate how the box's
+            position interacts with other boxes. <br />
+            <code>position: static;</code> is the default value for a box. Due to this, it typically isn't set unless it
+            would be otherwise overridden. <br />
+            <code>position: relative;</code> has the selected object maintain the flow of the page, but be displayed at
+            an offset position, relative to the other boxes. <br />
+            <code>position: absolute;</code> has the selected object fully removed from the flow of the page, and can be
+            positioned anywhere, independent of other boxes. <br />
+            <code>position: fixed;</code> has the selected object fully removed from the flow of the page, and fixes the
+            element to the browser's view, meaning it follows the scrollwheel independently of the web page. <br />
+        </p>
+
+        <h3>CSS Browsers &amp; Standards</h3>
+
+        <img src="images/boxmodeltwo.png"
+            alt="Image showing the differences between standard browser box model and the IE5 bod model."
+            class="right" />
+            <!-- Image using class right (float right) -->
+
+        <p>
+            Making use of the box model allows for a wider level of customisation to any webpage. The designer can even
+            alter the distance between the border and the content it surrounds. <br />
+            Some browsers are not capable of successfully rendering the box model. Internet Explorer 5 &amp; 6 both have
+            issues
+            displaying a box accurately, but this can be worked around by adding additional code. Internet Explorer 4
+            has
+            issues formatting a box correctly, but any workaround attempts will crash the browser. However, these
+            browsers
+            are not widely used today, and the most common browsers have no problem rendering the box model. The biggest
+            issue regarding compatibility is the fact that the Internet Explorer suite comes preinstalled on any Windows
+            OS
+            PC, but most people today simply use it to download a different browser. <br />
+            The incompatibility between Internet Explorer and the rest of the browsers is over what the base definition
+            of
+            the box should be. When a box is defined, the W3C specification states that this definition should size the
+            content alone, whereas in Internet Explorer takes this sizing to include the padding and the border. This
+            makes
+            a box intended to be quite large significantly smaller, and can lead to layout issues. <br />
+            Fortunately, most of these problematic compatibility browsers are outdated, and can be safely ignored, or
+            recent versions are much more compatible-friendly.
+        </p>
+
+        <p>
+            Fortunately, there are resources in place to help developers design around these incompatibilities. <a
+                href="https://www.quirksmode.org/css/contents.html">QuirksMode.org</a> is one such tool, detailing which
+            browsers are compatible with what elements. It also details how to get around IE6 limitations, utilising
+            browser-specific if-statements.
+        </p>
+
+        <p>
+            As for standards, CSS on the whole is a largely fault- and error-tolerant language. This means it will
+            process and compile all complete, valid rules, and ignore any incorrect rules, essentially allowing it to
+            always work. To ensure that all of the code writen will be processed, and is valid, <a
+                href="http://jigsaw.w3.org/css-validator/">CSS validator services</a> exist.
+        </p>
+
+    </div>
+
+    <hr />
+
+    <div class="footer">
+
+        <p>
+            Website by Summer Anderson-Cheung // Student 180363450 at <a
+                href="https://www.ncl.ac.uk/computing/">Newcastle
+                University School of Computing</a>.
+        </p>
+
+    </div>
+
+</body>
+
+</html>

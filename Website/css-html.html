@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This document uses XHTML 1.0 Strict -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSC1024: Web Design</title>
+    <link rel="stylesheet" href="style.css" type="text/css" /> <!-- Links the style css stylesheet -->
+</head>
+
+<body>
+
+    <div class="header">
+        <!-- Sections off the header of each page -->
+
+        <h1>CSC1024: Website Design and Construction</h1>
+        <p>A Guide to Designing Webpages.</p>
+
+        <div class="navbar">
+            <!-- Allows for adjustments with the nav bar -->
+            <a href="index-html.html">Introduction</a>
+            <!-- Lines 19 to 33 are links which craft the file structure of the website and allow for navigation -->
+            <a href="lecdir-html.html">Lecture Directory</a>
+            <div id="dropdown">
+                <!-- Allows for a drop down nav bar -->
+                <button onclick="window.location.href='lang-html.html'" id="drop">Languages</button>
+                <!-- Makes the button still clickable while also showing the nav bar on hover -->
+                <div id="dropcontent">
+                    <a href="html-html.html">HTML</a>
+                    <a href="css-html.html">CSS</a>
+                    <a href="javascript-html.html">JavaScript</a>
+                </div>
+            </div>
+            <a href="resource-html.html">Resources</a>
+        </div>
+
+    </div>
+
+    <hr />
+
+    <div class="pagecontent">
+        <!-- Sections off the page content of each page -->
+
+        <h2 id="css">CSS: Cascading Style Sheets</h2>
+
+        <img src="images/csslogo.png" class="right logo" alt="The CSS logo." />
+        <!-- Image using classes right (float image right) & logo (make image 100px wide with appropriate height) -->
+
+        <h3>What is CSS?</h3>
+
+        <p>
+            CSS is the design of the Internet. Every web page's appearance is defined in CSS. There are three key ways
+            to
+            use CSS:
+        </p>
+
+        <ul>
+            <li>
+                <i>Inline CSS</i> applies the CSS specifications to a single element, by placing it inside of an
+                element. For example, look at this line. It shows a ‘h1’ header which states, ‘this is a blue heading’.
+                The ‘style=’ part is where the CSS is located.
+                <div class="codebit">
+                    <code>&lt;h1 style="color:blue;"&gt;This is a blue heading.&lt;/h1&gt;</code>
+                </div>
+            </li>
+            <li><br /></li>
+            <li>
+                <i>Internal CSS</i> is a section where the CSS is located. The designer uses the element &lt;style&gt;
+                &amp; &lt;/style&gt; to show that they are about to begin coding the CSS of the webpage, and places the
+                CSS between the elements. The &lt;style&gt; element is located inside the &lt;head&gt; element.
+            </li>
+            <li><br /></li>
+            <li>
+                <i>External CSS</i> is when a stylesheet is linked to the CSS page at the top of the page, within the
+                &lt;head&gt; element. It is the most common way to use CSS for a webpage. The ‘href’ element would equal
+                the file location of the stylesheet.
+                <div class="codebit">
+                    <code>
+                    &lt;head&gt;<br />
+                    &lt;link rel="stylesheet" href="styles.css"&gt;<br />
+                    &lt;/head&gt;
+                </code>
+                </div>
+            </li>
+        </ul>
+
+        <h3>How do I use it?</h3>
+
+        <p>
+            In the interest of time, this tutorial will only cover external CSS stylesheets. This is the most
+            efficient
+            way
+            to use CSS, as it allows a single document to cover the CSS for multiple HTML pages, and as such, is the
+            method
+            that will be covered.
+        </p>
+
+        <p>
+            CSS is easy to understand, and hard to master. It doesn't require any opening or closing statements,
+            like
+            HTML,
+            and it doesn't require an understanding of programming, like JavaScript. With CSS, you state the part of
+            the
+            page you wish to affect (<i>one</i>), open your brackets, state how you'd like to change it, and then
+            close
+            the
+            brackets. It's that simple!
+        </p>
+
+        <div class="codebit">
+            <code>
+            one { <br />
+            color:blue; <br />
+            }
+        </code>
+        </div>
+
+        <p>
+            Of course, there are lots of ways you can change text, from borders, to background colours, and it's
+            always
+            important to remember that the 'colour' in CSS uses the American spelling. This is where CSS becomes
+            difficult:
+            managing to change multiple things without overruling one another. For example, what if I have two
+            paragraphs of
+            text, but I want one in red and one in blue? I can't just change all paragraphs, as they counterract
+            each
+            other.
+        </p>
+
+        <div class="codebit">
+            <code>
+            &lt;div id="one"&gt;<br />
+            &lt;p&gt;This is text!&lt;/p&gt;<br />
+            &lt;/div&gt;
+        </code>
+        </div>
+
+        <p>
+            The &lt;div&gt; tag allows you to select a specific portion of the copy, and have the CSS only affect
+            that
+            via
+            the label you give it. For example, this HTML and the previously used CSS would work together to make
+            the
+            text
+            appear blue. This is because using a div class is essentially like labelling a portion of the code, and
+            referencing the label in other places.
+        </p>
+
+        <p>
+            Also in the codebit is the term '<i>id="one"</i>'. The 'id' part of this is actually one of many options
+            available when utilising the div tags. For good practise, you use 'id' when you are referencing a
+            one-time
+            section, however you use 'class' instead when there are multiple of that class on the website. For
+            example,
+            on
+            this website, every codebit is under a div class called codebit. The CSS then changes how codebits look
+            so
+            they
+            read better than if they were plaintext.
+        </p>
+
+        <h3>More Information</h3>
+
+        <p>
+            That's the basics! A full tutorial on learning CSS can be found <a
+                href="https://www.w3schools.com/css/">here</a>!
+        </p>
+
+    </div>
+
+    <hr />
+
+    <div class="footer">
+
+        <p>
+            Website by Summer Anderson-Cheung // Student 180363450 at <a
+                href="https://www.ncl.ac.uk/computing/">Newcastle
+                University School of Computing</a>.
+        </p>
+
+    </div>
+
+</body>
+
+</html>

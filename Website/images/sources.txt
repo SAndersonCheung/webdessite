@@ -1,0 +1,17 @@
+Sources:
+
+w3schoolslogo.png
+https://commons.wikimedia.org/wiki/File:W3Schools_logo.png
+
+codeacademylogo.png 
+https://commons.wikimedia.org/wiki/File:Codecademy.svg
+
+csslogo.png
+https://commons.wikimedia.org/wiki/File:CSS3_logo_and_wordmark.svg
+
+htmllogo.png
+https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg
+
+javascriptlogo.png
+https://commons.wikimedia.org/wiki/File:JavaScript-logo.png
+

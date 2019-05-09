@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This document uses XHTML 1.0 Strict -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSC1024: Web Design</title>
+    <link rel="stylesheet" href="style.css" type="text/css" /> <!-- Links the style css stylesheet -->
+</head>
+
+<body>
+
+    <div class="header">
+        <!-- Sections off the header of each page -->
+
+        <h1>CSC1024: Website Design and Construction</h1>
+        <p>A Guide to Designing Webpages.</p>
+
+        <div class="navbar">
+            <!-- Allows for adjustments with the nav bar -->
+            <a href="index-html.html">Introduction</a>
+            <!-- Lines 19 to 33 are links which craft the file structure of the website and allow for navigation -->
+            <a href="lecdir-html.html">Lecture Directory</a>
+            <div id="dropdown">
+                <!-- Allows for a drop down nav bar -->
+                <button onclick="window.location.href='lang-html.html'" id="drop">Languages</button>
+                <!-- Makes the button still clickable while also showing the nav bar on hover -->
+                <div id="dropcontent">
+                    <a href="html-html.html">HTML</a>
+                    <a href="css-html.html">CSS</a>
+                    <a href="javascript-html.html">JavaScript</a>
+                </div>
+            </div>
+            <a href="resource-html.html">Resources</a>
+        </div>
+
+    </div>
+
+    <hr />
+
+    <div class="pagecontent">
+        <!-- Sections off the page content of each page -->
+
+        <h2 id="html">HTML: Hypertext Markup Language</h2>
+
+        <img src="images/htmllogo.png" class="logo right" alt="The HTML logo." />
+        <!-- Image using classes right (float image right) & logo (make image 100px wide with appropriate height) -->
+
+        <h3>What is HTML?</h3>
+
+        <p>
+            HTML is the programming language that makes up the Internet; every web page is made in a set type of HTML.
+            Initially released in 1993, HTML has
+            undergone many different changes. The latest release of HTML is HTML5
+        </p>
+
+        <h3>How does it work?</h3>
+
+        <p>
+            HTML functions through <i>elements</i>. Each HTML element is surrounded by a set of '&lt; &gt;' tags. The
+            tags
+            tell the page that it is an element, and the element
+            tells the page how to display whatever it surrounds. For example, a functional type of HTML code would be:
+        </p>
+        <div class="codebit">
+            <code>&lt;strong&gt;<strong> This text is bold! </strong>&lt;/strong&gt;</code>
+        </div>
+        <p>
+            The element tags surround the text that the user wishes to make bold, and the word 'strong' defines that the
+            user would like the text to be made bold.
+        </p>
+
+        <p>
+            Everything on a webpage will be made up of elements: some will be more complicated than others, but all are
+            based on the same formula. Understanding the base
+            formula is the first step to learning how to write HTML code!
+        </p>
+
+        <div class="note">
+            <p>
+                <strong>Note:</strong> typing '&lt;!-- this --&gt;' around your text, where 'this' is your text, makes
+                the
+                text a comment!
+            </p>
+        </div>
+
+        <h3>How do I start a HTML document?</h3>
+
+        <p>
+            Every web page on the Internet must start with a <i>&lt;!DOCTYPE html&gt;</i> and must be closed by a
+            <i>&lt;/html&gt;</i>. Without this, the page will not be read as a HTML web page, and
+            will be unreadable code to a compiler. The part of the page that is intended to be seen must be surrounded
+            by
+            <i>&lt;body&gt;</i> tags.
+        </p>
+
+        <table>
+            <tr>
+                <th>Code Line</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td><i>&lt;!DOCTYPE html&gt;</i></td>
+                <td>This tells the compiler that the file is a HTML file.</td>
+            </tr>
+            <tr>
+                <td><i>&lt;html lang="en"&gt;</i></td>
+                <td> This tells the compiler that the file is a HTML file that is in English.</td>
+            </tr>
+            <tr>
+                <td><i>&lt;meta charset="utf-8"&gt;</i></td>
+                <td> This marks the page as using charset 'utf-8', which replaced ASCII as the definition of characters
+                    on
+                    the Internet.</td>
+            </tr>
+            <tr>
+                <td><i>&lt;title>Page Title&lt;/title&gt;</i></td>
+                <td> This defines the title of the page: what appears in the tab bar when the page is open.</td>
+            </tr>
+            <tr>
+                <td><i>&lt;body&gt;</i></td>
+                <td> This marks the start of the 'body' - the page's actual content.</td>
+            </tr>
+            <tr>
+                <td><i>&lt;h1&gt;This is a Heading&lt;/h1&gt;</i></td>
+                <td> This defines a heading.</td>
+            </tr>
+            <tr>
+                <td><i>&lt;p&gt;This is a paragraph.&lt;/p&gt;</i></td>
+                <td> This defines a paragraph.</td>
+            </tr>
+            <tr>
+                <td><i>&lt;p&gt;This is another paragraph.&lt;/p&gt;</i></td>
+                <td> This defines a paragraph.</td>
+            </tr>
+            <tr>
+                <td><i>&lt;/body&gt;</i></td>
+                <td> This marks the end of the body segment.</td>
+            </tr>
+            <tr>
+                <td><i>&lt;/html&gt;</i></td>
+                <td> This marks the end of the HTML file.</td>
+            </tr>
+        </table>
+
+        <h4>What next?</h4>
+
+        <p>
+            Now that you have the base of your HTML document, you can easily fill it with text content using &lt;h1&gt;
+            and
+            &lt;p&gt; to your heart's content. However, the page looks a bit dull. Let's make it more interesting with
+            some
+            images and hyperlinks.
+        </p>
+
+        <div class="codebit">
+            <code>&lt;img src="one" alt="two"&gt;</code>
+        </div>
+
+        <div class="note">
+            <p>
+                <strong>Note:</strong> You can have headers decreasing in size from &lt;h1&gt; all the way to
+                &lt;h6&gt;!
+            </p>
+        </div>
+
+        <p>
+            With images, you don't need a closing tag, as they are self-contained. Now, let's decode that codebit. The
+            <i>one</i> seen folowing 'src' is where the link to the image will be. This can be a link to an image online
+            (using the URL after opening the image in a new tab), or an image contained within the file structure of the
+            website. The <i>two</i> following 'alt' defines the text that will appear should the image fail to load
+            whether
+            due to an error, or the user having certain permissions denied.
+        </p>
+
+        <div class="codebit">
+            <code>&lt;a href="three" title="four"&gt;This text would be the link!&lt;/a&gt;</code>
+        </div>
+
+        <p>
+            Links do use closing tags, and they make anything in between their tags the link, including images. The
+            <i>three</i> following 'href' is the destination: where the link will take the user. The <i>four</i>
+            following
+            'title' is an additional tooltip providing more information. It will be seen when the mouse hovers over the
+            link.
+        </p>
+
+        <h4>More Information</h4>
+
+        <p>
+            That's the basics! A full tutorial on learning HTML can be found <a
+                href="https://www.w3schools.com/html/default.asp">here</a>!
+        </p>
+
+    </div>
+
+    <hr />
+
+    <div class="footer">
+
+        <p>
+            Website by Summer Anderson-Cheung // Student 180363450 at <a
+                href="https://www.ncl.ac.uk/computing/">Newcastle
+                University School of Computing</a>.
+        </p>
+
+    </div>
+
+</body>
+
+</html>
